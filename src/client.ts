@@ -4,8 +4,7 @@ import * as url from 'url';
 import {Stream} from './stream';
 
 const defaultPrefix = 'v1/';
-const defaultLocal = 'http://localhost:8080/';
-const defaultLive = 'https://api.m3o.com/';
+const defaultAddress = 'http://localhost:8080/';
 
 export interface Options {
   token?: string;
@@ -15,8 +14,6 @@ export interface Options {
   address?: string;
   // Helper flag to set the url prefix of the server
   prefix?: string;
-  // Helper flag to help users connect to the default local address
-  local?: boolean;
 }
 
 /**
@@ -26,24 +23,18 @@ export interface ClientOptions {
   token?: string;
   address: string;
   prefix: string;
-  local: boolean;
 }
 
 export class Client {
   public options: ClientOptions = {
-    address: defaultLive,
+    address: defaultAddress,
     prefix: defaultPrefix,
-    local: false,
   };
 
   constructor(options?: Options) {
     if (options) {
       if (options.token) {
         this.options.token = options.token;
-      }
-      if (options.local) {
-        this.options.local = true;
-        this.options.address = defaultLocal;
       }
       if (options.address) {
         this.options.address = options.address;
