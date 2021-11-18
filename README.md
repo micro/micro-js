@@ -1,6 +1,8 @@
 # Micro JS Client
 
-The JS client for the Micro Platform
+The JS client for the Micro Platform.
+
+View on [NPM](https://www.npmjs.com/package/micro-js-client)
 
 ## Usage
 
