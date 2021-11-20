@@ -35,9 +35,9 @@ The output will be:
 Make a websocket streaming request
 
 ```js
-const client = require("micro-js-client")
+const micro = require("micro-js-client")
 
-new client.Client({ token: 'MICRO_API_TOKEN' })
+new micro.Client({ token: 'MICRO_API_TOKEN' })
   .stream("helloworld", "stream", {"name": "John", "messages": 10})
   .then(stream => {
 	stream.recv(msg => {
